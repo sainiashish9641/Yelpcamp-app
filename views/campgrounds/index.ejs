@@ -1,0 +1,31 @@
+<% include ../partials/header %>
+
+<div class="container text-center">
+   <header class="jumbotron" style=" background-image:url(https://images.unsplash.com/photo-1504727873464-87a6a806bc02?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ad7c8e191caf61e45e66724f4a58815c&auto=format&fit=crop&w=750&q=80); background-position:center;background-repeat:no-repeat; background-size:cover;">
+      <h1 class="display-4 text-light"><b>YELPCAMP CAMPGROUNDS</b></h1>
+      <p class="lead text-dark mb-5">These are all the hand picked images from all over the world!</p>
+      <a class="btn btn-lg btn-outline-light mt-5" href="/campgrounds/new">ADD NEW CAMPGROUNDS</a>
+   </header>
+</div>
+
+<div class="container text-center ">
+   <div class="row " >
+      <% campgrounds.forEach(function(campground){ %>
+         <div class=" col-sm-12 col-md-6 col-lg-4 ">
+           <div class="card mb-4 " style="width: auto">
+              <img class="card-img-top img-thumbnail" src="<%= campground.img %>" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title"> <%= campground.name %> </h5>
+                <a href="/campgrounds/<%= campground._id %>" class="btn btn-success">More Info</a>
+              </div>
+            </div>
+         </div>
+      <% });  %>
+   </div>
+</div>
+
+
+
+
+
+<% include ../partials/footer %>

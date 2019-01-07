@@ -1,0 +1,23 @@
+<% include partials/header %>
+
+<div class="container border p-4" style="width:30%; margin:3% auto;">
+    <h4 class="display-5 text-center text-dark card-header mb-3">SIGNUP HERE</h4>
+    <form  action="/register" method="POST">
+        <div class="form-group">
+            <label for="userName">Username:</label>
+            <input id="userName" class=" form-control" type="text" placeholder="username" name="username" required>
+            <small class="text-muted form-text">Plaese write the name properly</small>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input id="password" class="form-control" type="password" placeholder="password" name="password" required>
+            <small class="text-muted form-text">Plaese write the password properly</small>
+        </div>
+        
+        <input class=" btn btn-outline-success form-control mb-3 "  type="submit" value="SIGNUP">
+    </form>
+</div>
+ 
+
+<% include partials/footer %>
+

@@ -1,0 +1,36 @@
+<% include ../partials/header %>
+
+<div class="container border p-4" style="width:30%; margin:3% auto;">
+    <h4 class="display-5 text-center text-dark pb-3">ADD NEW CAMPGROUND</h4>
+    <form  action="/campgrounds" method="POST">
+        <div class="form-group">
+            <label for="imageName">Name of Image:</label>
+            <input id="imageName" class=" form-control" type="text" placeholder="name" name="name" required>
+            <small class="text-muted form-text">Plaese write the name properly</small>
+        </div>
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input id="price" class=" form-control" type="number" placeholder="price" name="price" min="0.01" step="0.01" required>
+            <small class="text-muted form-text">Plaese write the price properly</small>
+        </div>
+        <div class="form-group">
+            <label for="imageURL">URL of Image:</label>
+            <input id="imageURL" class="form-control" type="text" placeholder="image" name="img" required>
+            <small class="text-muted form-text">Plaese write the URL properly</small>
+        </div>
+        <div class="form-group">
+            <label for="desc">Description of Image:</label>
+            <input id="imageURL" class="form-control" type="text" placeholder="image Description" name="imgDesc" required>
+            <small class="text-muted form-text">Plaese write the Description properly</small>
+        </div>
+        <input class=" btn btn-outline-success form-control mb-3 "  type="submit">
+    </form>
+    <a href="/campgrounds">BACK</a>
+</div>
+ 
+
+
+
+
+
+<% include ../partials/footer %>

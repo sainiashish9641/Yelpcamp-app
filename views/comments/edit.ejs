@@ -1,0 +1,21 @@
+<% include ../partials/header %>
+
+<div class="container border p-4" style="width:30%; margin:3% auto;">
+    <h4 class="display-5 text-center text-dark card-header mb-3 pb-3">EDIT COMMENT  </h4>
+    <form  action="/campgrounds/<%= campground_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+        <div class="form-group">
+            <label for="text">Text:</label>
+            <input id="text" class="form-control" type="text" value="<%= comment.text %>" name="comment[text]" required>
+            <small class="text-muted form-text">Plaese write the Text properly</small>
+        </div>
+        <input class=" btn btn-outline-success form-control mb-3 "  type="submit">
+    </form>
+    <a href="/campgrounds">BACK</a>
+</div>
+ 
+
+
+
+
+
+<% include ../partials/footer %>
