@@ -14,10 +14,11 @@ var express      =require("express"),
 
 //it is the seed function data for the index page which uses two models comment & campgound    
 // seedDB();    
-// connect mongoose with DB    
-// mongoose.connect('mongodb://localhost:27017/Yelp_app_8', { useNewUrlParser: true });
-mongoose.connect('mongodb://ashish:ashish786@ds151124.mlab.com:51124/yelpcamp', { useNewUrlParser: true });
-// mongodb://<dbuser>:<dbpassword>@ds151124.mlab.com:51124/yelpcamp
+// connect mongoose with DB using process.env.databaseUrl, which is coming form the running application  
+console.log(process.env.DATABASEURL);
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
+// mongoose.connect('mongodb://ashish:ashish786@ds151124.mlab.com:51124/yelpcamp', { useNewUrlParser: true });
+
 
 // flash is used to show the error and success msgs
 app.use(flash());
