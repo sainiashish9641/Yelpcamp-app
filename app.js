@@ -13,10 +13,12 @@ var express      =require("express"),
     seedDB       =require("./seeds");
 
 //it is the seed function data for the index page which uses two models comment & campgound    
-// seedDB();    
-// connect mongoose with DB using process.env.databaseUrl, which is coming form the running application  
-console.log(process.env.DATABASEURL);
-mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
+// seedDB();  
+
+// connect mongoose with DB using process.env.databaseUrl, which is coming form the running application
+// it use to differ between local DB and herku DB 
+var url=process.env.DATABASEURL || "mongodb://localhost:27017/Yelp_app_8"
+mongoose.connect(url, { useNewUrlParser: true });
 // mongoose.connect('mongodb://ashish:ashish786@ds151124.mlab.com:51124/yelpcamp', { useNewUrlParser: true });
 
 
